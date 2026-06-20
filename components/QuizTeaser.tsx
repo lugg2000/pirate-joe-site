@@ -39,7 +39,7 @@ export default function QuizTeaser() {
           ☠ Find Your Crew Role ☠
         </Link>
 
-        <p className="mt-4 text-[0.85rem] italic text-[rgba(244,228,193,0.4)]">
+        <p className="mt-4 text-[0.85rem] italic text-[rgba(244,228,193,0.7)]">
           Takes about 3 minutes · Shareable results
         </p>
       </div>

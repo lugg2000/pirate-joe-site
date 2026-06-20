@@ -59,7 +59,7 @@ export default function Engagements() {
             always just a conversation.
           </p>
           <a
-            href="mailto:hello@piratejoeadventures.com"
+            href="mailto:Mark.lugg@outlook.com"
             className="font-label inline-block rounded border border-[rgba(200,150,12,0.5)] px-8 py-3 text-[0.9rem] font-semibold uppercase tracking-[0.12em] text-[var(--gold-light)] transition-colors hover:bg-[rgba(255,255,255,0.05)]"
           >
             Get in Touch →

@@ -21,10 +21,37 @@ const crimsonText = Crimson_Text({
   style: ["normal", "italic"],
 });
 
+const siteUrl = "https://www.piratejoeadventures.com";
+const siteTitle = "Pirate Joe: An Adventure in Business — Learning the Ropes";
+const siteDescription =
+  "The pirate adventure that adults keep reading for themselves. A crew of characters who'll feel suspiciously familiar. A story about risk, leadership, and finding the right people.";
+
 export const metadata: Metadata = {
-  title: "Pirate Joe: An Adventure in Business — Learning the Ropes",
-  description:
-    "The pirate adventure that adults keep reading for themselves. A crew of characters who'll feel suspiciously familiar. A story about risk, leadership, and finding the right people.",
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    url: siteUrl,
+    siteName: "Pirate Joe",
+    images: [
+      {
+        url: "/images/book-cover.png",
+        width: 896,
+        height: 1345,
+        alt: "Pirate Joe: An Adventure in Business — book cover",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+    images: ["/images/book-cover.png"],
+  },
 };
 
 export default function RootLayout({

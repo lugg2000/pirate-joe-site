@@ -49,6 +49,18 @@ export default function SeriesTeaser() {
             The journey continues…
           </div>
         </div>
+
+        <div>
+          <div className="mx-auto mb-3 flex h-[180px] w-[120px] items-center justify-center rounded-[3px] border-2 border-dashed border-[var(--gold)] bg-[var(--navy)] text-[2rem] opacity-50">
+            ?
+          </div>
+          <div className="font-label text-[0.8rem] text-[var(--gold-light)]">
+            Book Four
+          </div>
+          <div className="text-[0.75rem] italic text-[rgba(244,228,193,0.5)]">
+            Still being charted…
+          </div>
+        </div>
       </div>
     </section>
   );

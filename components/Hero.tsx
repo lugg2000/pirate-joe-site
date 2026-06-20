@@ -62,15 +62,22 @@ export default function Hero() {
       </div>
 
       <div className="relative hidden items-center justify-center p-12 md:flex">
-        <div className="relative aspect-[2/3] w-full max-w-sm overflow-hidden rounded-md shadow-[0_30px_80px_rgba(0,0,0,0.6)] ring-2 ring-[var(--gold)]">
-          <Image
-            src="/images/book-cover.png"
-            alt="Pirate Joe: An Adventure in Business — Learning the Ropes, book cover"
-            fill
-            className="object-cover"
-            priority
-            sizes="(min-width: 768px) 400px, 0px"
-          />
+        <div className="relative aspect-[2/3] w-full max-w-sm">
+          <div className="relative h-full w-full overflow-hidden rounded-md shadow-[0_30px_80px_rgba(0,0,0,0.6)] ring-2 ring-[var(--gold)]">
+            <Image
+              src="/images/book-cover.png"
+              alt="Pirate Joe: An Adventure in Business — Learning the Ropes, book cover"
+              fill
+              className="object-cover"
+              priority
+              sizes="(min-width: 768px) 400px, 0px"
+            />
+          </div>
+          <div className="font-label absolute -bottom-4 -right-4 flex h-20 w-20 items-center justify-center rounded-full border-[3px] border-[var(--navy)] bg-[var(--gold)] text-center text-[0.65rem] font-bold uppercase leading-tight tracking-[0.1em] text-[var(--navy)] shadow-[0_4px_15px_rgba(0,0,0,0.4)]">
+            Book One
+            <br />
+            Out Now
+          </div>
         </div>
       </div>
     </section>

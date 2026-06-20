@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { crew, CrewKey, crewList } from "@/lib/crew";
@@ -19,6 +20,8 @@ const emptyScores: Scores = {
   pai: 0,
 };
 
+const crewKeys = Object.keys(emptyScores) as CrewKey[];
+
 function getTopResult(scores: Scores): CrewKey {
   let topKey: CrewKey = "joe";
   let topScore = -Infinity;
@@ -31,15 +34,32 @@ function getTopResult(scores: Scores): CrewKey {
   return topKey;
 }
 
-export default function QuizPage() {
-  const [stage, setStage] = useState<"intro" | "question" | "result">("intro");
+function QuizContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const initialSharedResult = (() => {
+    const shared = searchParams.get("result");
+    return shared && crewKeys.includes(shared as CrewKey)
+      ? (shared as CrewKey)
+      : null;
+  })();
+
+  const [stage, setStage] = useState<"intro" | "question" | "result">(
+    initialSharedResult ? "result" : "intro"
+  );
+  const [history, setHistory] = useState<number[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [scores, setScores] = useState<Scores>(emptyScores);
-  const [resultKey, setResultKey] = useState<CrewKey | null>(null);
+  const [resultKey, setResultKey] = useState<CrewKey | null>(
+    initialSharedResult
+  );
+  const [copied, setCopied] = useState(false);
 
   function startQuiz() {
     setScores(emptyScores);
     setCurrentQuestion(0);
+    setHistory([]);
     setStage("question");
   }
 
@@ -49,20 +69,64 @@ export default function QuizPage() {
       nextScores[key] += optionScores[key] ?? 0;
     });
     setScores(nextScores);
+    setHistory([...history, currentQuestion]);
 
     if (currentQuestion + 1 >= questions.length) {
-      setResultKey(getTopResult(nextScores));
+      const top = getTopResult(nextScores);
+      setResultKey(top);
       setStage("result");
+      router.replace(`/quiz?result=${top}`, { scroll: false });
     } else {
       setCurrentQuestion(currentQuestion + 1);
     }
   }
 
+  function goBack() {
+    if (history.length === 0) {
+      // Back from the first question goes to the intro screen.
+      setStage("intro");
+      return;
+    }
+    const prevHistory = [...history];
+    const prevQuestion = prevHistory.pop() as number;
+    setHistory(prevHistory);
+    setCurrentQuestion(prevQuestion);
+  }
+
   function restartQuiz() {
     setStage("intro");
     setCurrentQuestion(0);
+    setHistory([]);
     setScores(emptyScores);
     setResultKey(null);
+    router.replace("/quiz", { scroll: false });
+  }
+
+  async function shareResult() {
+    if (!resultKey) return;
+    const url = `${window.location.origin}/quiz?result=${resultKey}`;
+    const shareData = {
+      title: "Which Crew Member Are You? — Pirate Joe",
+      text: `I got ${result?.name} on the Pirate Joe crew quiz! Find out who you are:`,
+      url,
+    };
+
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch {
+        // user cancelled the native share sheet; fall through to copy
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard unavailable; nothing more we can do silently
+    }
   }
 
   const result = resultKey ? crew[resultKey] : null;
@@ -141,7 +205,14 @@ export default function QuizPage() {
           {stage === "question" && (
             <div className="animate-[fadeUp_0.4s_ease_both]">
               <div className="mb-6">
-                <div className="font-label mb-2 flex justify-between text-[0.7rem] uppercase tracking-[0.1em] text-[var(--wood-light)]">
+                <div className="font-label mb-2 flex items-center justify-between text-[0.7rem] uppercase tracking-[0.1em] text-[var(--wood-light-text)]">
+                  <button
+                    onClick={goBack}
+                    className="flex items-center gap-1 rounded px-2 py-1 -ml-2 text-[var(--wood)] transition-colors hover:bg-[rgba(92,58,30,0.1)] hover:text-[var(--ink)]"
+                    aria-label="Go back to the previous question"
+                  >
+                    ← Back
+                  </button>
                   <span>The Voyage</span>
                   <span>
                     Question {currentQuestion + 1} of {questions.length}
@@ -200,7 +271,7 @@ export default function QuizPage() {
               <div className="font-heading mb-1 text-[clamp(1.4rem,4vw,2rem)] text-[var(--navy)]">
                 {result.name}
               </div>
-              <div className="font-label mb-3 text-[0.8rem] uppercase tracking-[0.15em] text-[var(--wood-light)]">
+              <div className="font-label mb-3 text-[0.8rem] uppercase tracking-[0.15em] text-[var(--wood-light-text)]">
                 {result.resultRole}
               </div>
               <p className="mb-6 text-[1.1rem] italic leading-relaxed text-[var(--wood)]">
@@ -209,7 +280,7 @@ export default function QuizPage() {
 
               <div className="mb-6 grid gap-4 sm:grid-cols-2">
                 <div className="rounded border border-[rgba(92,58,30,0.15)] bg-[rgba(26,39,68,0.06)] p-3.5 text-left">
-                  <div className="font-label mb-1 text-[0.65rem] uppercase tracking-[0.1em] text-[var(--wood-light)]">
+                  <div className="font-label mb-1 text-[0.7rem] uppercase tracking-[0.1em] text-[var(--wood-light-text)]">
                     ⚔ Greatest Strength
                   </div>
                   <div className="text-[0.95rem] font-semibold text-[var(--ink)]">
@@ -217,7 +288,7 @@ export default function QuizPage() {
                   </div>
                 </div>
                 <div className="rounded border border-[rgba(92,58,30,0.15)] bg-[rgba(26,39,68,0.06)] p-3.5 text-left">
-                  <div className="font-label mb-1 text-[0.65rem] uppercase tracking-[0.1em] text-[var(--wood-light)]">
+                  <div className="font-label mb-1 text-[0.7rem] uppercase tracking-[0.1em] text-[var(--wood-light-text)]">
                     ⚠ Watch Out For
                   </div>
                   <div className="text-[0.95rem] font-semibold text-[var(--ink)]">
@@ -241,7 +312,7 @@ export default function QuizPage() {
 
               <div className="mx-auto my-6 h-0.5 w-16 bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent" />
 
-              <p className="mb-2 text-[0.95rem] italic text-[var(--wood-light)]">
+              <p className="mb-2 text-[0.95rem] italic text-[var(--wood-light-text)]">
                 📖 Read their full story in
               </p>
               <Link
@@ -250,12 +321,21 @@ export default function QuizPage() {
               >
                 Pirate Joe: Learning the Ropes — Get the Book
               </Link>
-              <button
-                onClick={restartQuiz}
-                className="font-label rounded border border-[rgba(92,58,30,0.3)] px-6 py-2.5 text-[0.8rem] font-semibold uppercase tracking-[0.1em] text-[var(--wood)] transition-colors hover:bg-[rgba(92,58,30,0.1)]"
-              >
-                ⟳ &nbsp; Take the Quiz Again
-              </button>
+
+              <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-3">
+                <button
+                  onClick={shareResult}
+                  className="font-label rounded border border-[var(--gold)] bg-[rgba(200,150,12,0.08)] px-6 py-2.5 text-[0.8rem] font-semibold uppercase tracking-[0.1em] text-[var(--wood)] transition-colors hover:bg-[rgba(200,150,12,0.15)]"
+                >
+                  {copied ? "✓ Link Copied" : "🔗 Share My Result"}
+                </button>
+                <button
+                  onClick={restartQuiz}
+                  className="font-label rounded border border-[rgba(92,58,30,0.3)] px-6 py-2.5 text-[0.8rem] font-semibold uppercase tracking-[0.1em] text-[var(--wood)] transition-colors hover:bg-[rgba(92,58,30,0.1)]"
+                >
+                  ⟳ &nbsp; Take the Quiz Again
+                </button>
+              </div>
             </div>
           )}
         </div>
@@ -269,5 +349,13 @@ export default function QuizPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function QuizPage() {
+  return (
+    <Suspense fallback={null}>
+      <QuizContent />
+    </Suspense>
   );
 }

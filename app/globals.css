@@ -13,6 +13,7 @@
   --green: #1a5c2a;
   --wood: #5c3a1e;
   --wood-light: #8b5e3c;
+  --wood-light-text: #7c5235;
   --cream: #faf6ec;
 
 }
@@ -31,6 +32,15 @@ body {
 
 .font-label {
   font-family: var(--font-cinzel), serif;
+}
+
+/* Visible keyboard focus state for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 @keyframes fadeUp {

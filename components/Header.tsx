@@ -12,7 +12,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 flex items-center justify-between gap-6 bg-[var(--navy)] px-6 py-4 shadow-[0_2px_20px_rgba(0,0,0,0.4)] border-b-2 border-[var(--gold)] md:px-10">
       <Link href="/" className="font-heading text-[1.05rem] leading-tight text-[var(--gold-light)] [text-shadow:0_0_20px_rgba(200,150,12,0.4)]">
         Pirate Joe
-        <span className="font-label mt-1 block text-[0.65rem] font-normal uppercase tracking-[0.15em] text-[var(--parchment-dark)]">
+        <span className="font-label mt-1 block text-[0.7rem] font-normal uppercase tracking-[0.15em] text-[var(--parchment-dark)]">
           An Adventure in Business
         </span>
       </Link>

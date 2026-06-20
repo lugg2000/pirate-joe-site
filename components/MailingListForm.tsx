@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Link from "next/link";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -55,7 +56,7 @@ export default function MailingListForm() {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your@email.com"
           disabled={status === "loading"}
-          className="flex-1 rounded-[3px] border-2 border-[var(--wood-light)] bg-white px-5 py-3.5 text-[1rem] text-[var(--ink)] focus:border-[var(--gold)] focus:outline-none disabled:opacity-60"
+          className="flex-1 rounded-[3px] border-2 border-[var(--wood-light)] bg-white px-5 py-3.5 text-[1rem] text-[var(--ink)] focus:border-[var(--gold)] disabled:opacity-60"
         />
         <button
           type="submit"
@@ -68,8 +69,13 @@ export default function MailingListForm() {
       {status === "error" && (
         <p className="mb-2 text-[0.85rem] text-[var(--red)]">{errorMessage}</p>
       )}
-      <p className="text-[0.85rem] italic text-[var(--wood-light)]">
-        No spam. No weekly newsletters. Just the things worth knowing.
+      <p className="text-[0.85rem] italic text-[var(--wood-light-text)]">
+        No spam. No weekly newsletters. Just the things worth knowing. See
+        our{" "}
+        <Link href="/privacy" className="underline hover:text-[var(--wood)]">
+          Privacy Policy
+        </Link>
+        .
       </p>
     </form>
   );
