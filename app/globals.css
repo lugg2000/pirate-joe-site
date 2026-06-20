@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --parchment: #f4e4c1;
+  --parchment-dark: #e8d5a3;
+  --parchment-mid: #ede0b8;
+  --ink: #2a1a0a;
+  --navy: #1a2744;
+  --navy-mid: #243560;
+  --gold: #c8960c;
+  --gold-light: #f0b429;
+  --red: #8b1a1a;
+  --green: #1a5c2a;
+  --wood: #5c3a1e;
+  --wood-light: #8b5e3c;
+  --cream: #faf6ec;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-crimson), Georgia, serif;
+}
+
+.font-heading {
+  font-family: var(--font-cinzel-decorative), serif;
+}
+
+.font-label {
+  font-family: var(--font-cinzel), serif;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
