@@ -4,13 +4,6 @@ import { crewList } from "@/lib/crew";
 export default function QuizTeaser() {
   return (
     <section className="relative overflow-hidden bg-[var(--navy-mid)] px-6 py-16 text-center md:px-12 md:py-20">
-      <div
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none text-[20rem] text-[rgba(255,255,255,0.02)]"
-        aria-hidden="true"
-      >
-        ☠
-      </div>
-
       <div className="relative z-10 mx-auto max-w-xl">
         <h2 className="font-heading mb-2 text-[2rem] text-[var(--gold-light)]">
           Which Crew Member Are You?
