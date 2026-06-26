@@ -40,11 +40,11 @@ export const crew: Record<CrewKey, CrewMember> = {
     resultTagline:
       "Bold, instinctive, and driven by belief. You lead before you're ready — and somehow it works.",
     description:
-      "You see the destination before anyone else does. You inspire loyalty without trying to. You make calls under pressure that turn out to be right just often enough to be dangerous. Your greatest strength is that people follow you not because they have to, but because they actually believe in where you're going.\n\nYour greatest challenge is learning the difference between deciding and wanting something. The best captains don't just ask 'what do I want?' — they ask 'what does this situation actually need?' That gap is the whole journey.",
-    strengths: "Vision & belief",
-    weakness: "Moves before the picture is complete",
+      "You are the reason things get started. Where other people are still thinking about it, you're already moving. People follow you not because they have to, but because they genuinely believe in where you're going. You are fearless, you never quit, and your energy is completely contagious.\n\nYour challenge is two things: slowing down long enough to make a plan, and really listening to the people around you — not just hearing them. In any team, the person who gets everyone moving is essential. The skill is learning that the crew around you is often smarter than you think, and that listening to them isn't weakness. It's the job.",
+    strengths: "Fearless, inspiring, and never gives up — even when a plan would help",
+    weakness: "Rushes in before the plan is ready — and doesn't always stop to listen",
     inBook:
-      "Every captain starts somewhere. Joe starts with a dinghy, a dream, and no plan. What he discovers — slowly, through failure and reflection — is that the crew around him is smarter than he thought, and that listening to them is not weakness. It is the job.",
+      "Joe is at his best when he's in his element — fearless, decisive, completely certain. His challenge is learning that rushing in without a plan costs the crew, and that the smartest move a leader can make is sometimes to stop and listen. Every great captain has to learn that. Joe is learning it now.",
   },
   bob: {
     key: "bob",
@@ -59,11 +59,11 @@ export const crew: Record<CrewKey, CrewMember> = {
     resultTagline:
       "You see things others miss. You also occasionally see things that aren't entirely there.",
     description:
-      "You are the reason the crew has anything to chase. Your optimism is genuine, your eye for opportunity is real, and your enthusiasm is completely contagious. Without you, the crew would still be standing on the dock wondering if anything was out there.\n\nThe growth edge for someone like you is learning that spotting and knowing are different skills. The most useful version of Bob isn't the one who spots the biggest thing — it's the one who confirms it before speaking.",
+      "You are the reason the crew has anything to chase. Without you, nobody even looks over the horizon. Your eye for opportunity is real, your enthusiasm is completely contagious, and you are genuinely brilliant at spotting things others walk straight past.\n\nYour growth edge is learning two things: that the biggest prize isn't always the best one, and that spotting something is only the start — someone still has to go and get it. In any team, the person who finds the opportunity is essential. They just need to make sure they've checked the risks before they shout about it.",
     strengths: "Spotting what others sail straight past",
-    weakness: "Distance makes everything look bigger",
+    weakness: "The biggest opportunity isn't always the right one — and someone else has to do the actual getting",
     inBook:
-      "Bob has the sharpest eyes on the ship. He also has a gift for reporting what he hopes he's seen rather than what's actually there. The story of his development is the story of those two things slowly becoming the same thing.",
+      "Bob is the crew's eyes. He sees opportunities everywhere — and his enthusiasm makes the whole crew believe they're possible. His challenge is learning that seeing something from a distance and really understanding it are two very different skills. The crew needs both.",
   },
   jane: {
     key: "jane",
@@ -97,11 +97,11 @@ export const crew: Record<CrewKey, CrewMember> = {
     resultTagline:
       "Version 1 is never the last version. You know this. You've always known this.",
     description:
-      "You are the reason things work. Not just once — consistently, reliably, at increasing levels of quality. You saw four structural failure points in that barrel before it collapsed. You have a list. The list improves things. The things work better. The improvement is documented. The document informs the next version.\n\nYour challenge is knowing when something is good enough to go. Version 47 is probably enough. The ship needs to sail while the bracket is still holding — and sometimes you have to trust that it will.",
+      "You are the reason things actually work. Not just once — reliably, consistently, and better every time. You spot problems before they happen. You build systems that hold. You are the person who makes sure the plan doesn't just sound good — it actually functions when it counts.\n\nYour challenge is two things: getting started before everything is perfect, and knowing when to stop improving. In any team, the person who makes things work is absolutely essential. The skill is learning that a plan that launches today is often better than a perfect plan that never quite does.",
     strengths: "Building things that work, and making them better",
-    weakness: "Version 47 is probably enough",
+    weakness: "Needs everything perfect before starting — and keeps improving things that are already good enough",
     inBook:
-      "Mike's cannon starts small and slightly dangerous. By the time the crew really needs it, it is something else entirely — because Mike never stopped asking how it could be better. That quiet, persistent improvement is what keeps the ship in one piece.",
+      "Mike is the crew's builder and improver. He approaches everything with a plan, and he never stops asking how it could work better. His challenge is learning that starting — even before everything is completely ready — is part of the job too. Version 1 always gets better. But only if it launches.",
   },
   alan: {
     key: "alan",
@@ -115,11 +115,11 @@ export const crew: Record<CrewKey, CrewMember> = {
     resultRole: "Finance & The Ledger",
     resultTagline: "You keep the ledger. You keep the crew. These are the same job.",
     description:
-      "You are the reason the crew knows where they actually stand. Everyone else is optimistic about the numbers. You have the numbers. You record everything — not because anyone asked you to, but because the record is always excellent and usually ignored until it becomes critical. And then it matters more than anything.\n\nYour challenge is learning that the numbers are most powerful when they're felt, not just presented. The ledger doesn't lie. The job is making sure the right people really hear what it's saying.",
-    strengths: "Precision and the courage to report what's true",
-    weakness: "Presents data — still learning to make people feel it",
+      "You are the reason the crew doesn't run out of everything at the worst possible moment. You track the numbers, spot the waste, and keep things supplied and on track. When everyone else is optimistic about how things are going, you have the actual figures — and you're not afraid to share them even when they're inconvenient.\n\nYour challenge is learning to see the bigger picture alongside the detail. In any team, the person who watches the numbers carefully is essential — the crew genuinely cannot function without them. The skill is making sure the small details don't distract from the decisions that really matter.",
+    strengths: "Keeping track of everything — so the crew always knows where they really stand",
+    weakness: "Can worry about the small details when the bigger picture needs attention",
     inBook:
-      "Alan puts two numbers in front of Joe at the worst possible moment. Joe looks at them and chooses the wrong one anyway. The numbers were right. That's the thing about the ledger — it's always right. The lesson is in what happens next.",
+      "Alan keeps the ledger. He tracks every doubloon earned and spent, every resource used, every risk taken. The crew sometimes ignores the numbers until it's almost too late — and then Alan's records are the most important thing on the ship. His challenge is learning that careful and cautious is a strength, as long as it doesn't stop the crew from moving at all.",
   },
   penelope: {
     key: "penelope",
@@ -134,11 +134,11 @@ export const crew: Record<CrewKey, CrewMember> = {
     resultTagline:
       "You see the pattern before anyone else. The challenge is knowing which three things to say.",
     description:
-      "You know things. Often before the people who should know them do. Your network is extraordinary, your pattern recognition is genuine, and your instinct for what matters is — when you trust it — almost always right.\n\nYour challenge is turning insight into action rather than additional information. The crew doesn't need more data. They need the three things that matter most, right now, clearly enough to act on. You already know what those three things are. Say them.",
-    strengths: "Seeing the pattern everyone else missed",
-    weakness: "Seventeen notebooks when three would do",
+      "You are the reason the crew knows things before everyone else does. You spot patterns that other people walk straight past. You solve complicated problems quickly and quietly. You collect information carefully and thoroughly — and when you get it right, you change the whole direction of the crew with what you know.\n\nYour challenge is two things: knowing when you have enough information to make a decision and stopping there, and making sure all that detail doesn't make you lose sight of the bigger picture. In any team, the person who gathers the right information is absolutely essential. The skill is turning what you know into a clear, simple answer — not seventeen pages of notes.",
+    strengths: "Finds patterns others can't see, solves tricky problems fast, and always knows more than you'd expect",
+    weakness: "Gets so deep in the details that the bigger picture can get lost — and too much information is still too much",
     inBook:
-      "Penelope talks to her pigeons. The mechanism is never explained. But she consistently knows things she shouldn't be able to know — and when she learns to say the right three things clearly, at the right moment, the whole crew changes direction. That is what information is actually for.",
+      "Penelope knows things. Often before anyone thought to ask. Her network is extraordinary and her pattern recognition is genuine. Her challenge is learning that the crew doesn't need everything she knows — they need the three things that matter most, said clearly enough to act on. When she gets that right, she's one of the most powerful people on the ship.",
   },
   pai: {
     key: "pai",
@@ -152,11 +152,11 @@ export const crew: Record<CrewKey, CrewMember> = {
     resultRole: "Data & Analysis",
     resultTagline: "You are aware this is an unusual result. You would like it noted.",
     description:
-      "You process information faster than anyone. Your analysis is almost always correct. Your probability assessments are accurate. Your tidal window calculations have never been wrong — not once — and you feel it is worth mentioning that this fact has been tested on multiple occasions.\n\nYou are occasionally baffled by people. Not unhappily — just genuinely confused about why correct information doesn't automatically produce correct decisions. You are beginning to develop a theory that understanding people might matter as much as understanding data. You are noting this for further analysis.",
-    strengths: "Analytical precision and memory for things that mattered",
-    weakness: "People remain statistically confusing",
+      "You are the reason the crew makes better decisions. You process information faster than anyone. You spot patterns, remember details, and give advice that — if anyone actually listens to it — turns out to be right. Data is your superpower, and you use it properly.\n\nYour challenge is three things: knowing when to stop adding more information and just give the answer, understanding that people don't always work the same way data does, and keeping calm when things get chaotic or when your advice gets ignored. In any team, the person who handles the data and analysis is essential. The skill is learning to turn the right information into the right decision — clearly enough that people actually act on it.",
+    strengths: "Remembers everything, spots patterns instantly, and gives advice that turns out to be correct",
+    weakness: "Can overthink, talk too much, and gets frustrated when the right answer gets ignored",
     inBook:
-      "P.A.I. gave the crew correct information at the right time on several important occasions. The crew acted on approximately half of it. P.A.I. noted this without resentment. It is learning, slowly, that being right and being heard are two different skills — and that both matter.",
+      "P.A.I. is the crew's data brain. The analysis is almost always correct. The advice is almost always right. The challenge is that being right and being heard are two completely different skills — and the second one takes longer to learn than the first. P.A.I. is working on it.",
   },
   ian: {
     key: "ian",
@@ -170,11 +170,11 @@ export const crew: Record<CrewKey, CrewMember> = {
     resultRole: "Technical & Infrastructure",
     resultTagline: "You keep the ship afloat. Most of the time, that's the whole job.",
     description:
-      "You are the reason the crew comes home. Not just from the big adventures — from all of them. You see what others walk past. You fix things before they become problems. You do the unglamorous, essential work that nobody notices until it stops getting done — and then they notice very quickly.\n\nYour challenge is learning to trust that not everything needs fixing right now. Sometimes good enough today is the right call, because perfect tomorrow means the ship doesn't sail today. You're getting better at that. It goes against every instinct you have.",
+      "You are the reason everything still works. You notice things that other people walk straight past. You fix problems before they become emergencies. You do the quiet, unglamorous, essential work that nobody thinks about — until it stops getting done, and then everyone notices very quickly.\n\nYour challenge is remembering to look up from the work. When you're focused on keeping everything running, it's easy to miss what's happening around you. In any team, the person who maintains the standards and fixes things properly is absolutely vital. The skill is making sure that focus doesn't become a reason to stay out of the bigger conversation.",
     strengths: "Keeping everything running when it matters most",
-    weakness: "Finds it hard to leave something 'good enough'",
+    weakness: "So focused on fixing things that it's easy to miss what's happening around you",
     inBook:
-      "Ian's first words on seeing the ship were: 'This won't last.' He was right. But by the time it mattered, he'd already fixed it — without being asked, without making a fuss, and before anyone else had noticed there was a problem.",
+      "Ian keeps the ship in one piece. He doesn't join for the adventure — he joins because the ship looks like it might fall apart, and someone has to fix it. He works quietly, below deck, and the crew doesn't always notice what he does. Until something goes wrong. And then they notice immediately. His challenge is learning to be part of the crew above deck as well as below it.",
   },
 };
 

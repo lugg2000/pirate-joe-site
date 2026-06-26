@@ -41,7 +41,7 @@ export const questions: QuizQuestion[] = [
         text: "Make a call — any call. Decisive movement beats perfect hesitation.",
         scores: { joe: 3 },
       },
-      { text: "Improvise. I'll spot something useful. I always do.", scores: { bob: 2, joe: 1 } },
+      { text: "Scan for options from a safe vantage point. Someone needs to keep the overview.", scores: { bob: 3 } },
       {
         text: "Check in with the crew first. Who's okay? Who needs support?",
         scores: { jane: 3 },
